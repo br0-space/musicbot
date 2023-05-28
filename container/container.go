@@ -8,6 +8,7 @@ import (
 	"github.com/br0-space/musicbot/interfaces"
 	"github.com/br0-space/musicbot/pkg/config"
 	"github.com/br0-space/musicbot/pkg/matchers/musiclinks"
+	"github.com/br0-space/musicbot/pkg/matchers/ping"
 	"github.com/br0-space/musicbot/pkg/songlink"
 	"sync"
 )
@@ -50,6 +51,7 @@ func ProvideMatchersRegistry() *matcher.Registry {
 			ProvideTelegramClient(),
 		)
 		matcherRegistryInstance.Register(musiclinks.MakeMatcher(ProvideSonglinkService()))
+		matcherRegistryInstance.Register(ping.MakeMatcher())
 	}
 
 	return matcherRegistryInstance
