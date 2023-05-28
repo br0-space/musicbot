@@ -19,7 +19,7 @@ type apiResponseEntity struct {
 	Artist string `json:"artistName"`
 }
 
-type apiResponseLinks struct {
+type apiResponseLinks struct { //nolint:musttag
 	Spotify    apiResponseLink
 	AppleMusic apiResponseLink
 	Youtube    apiResponseLink
@@ -45,7 +45,7 @@ func songlinkResponse(queryURL string) (*apiResponse, error) {
 		queryURL,
 	)
 
-	request, _ := http.NewRequest("GET", url, nil)
+	request, _ := http.NewRequest(http.MethodGet, url, nil)
 	response, _ := http.DefaultClient.Do(request)
 
 	responseBody := &apiResponse{}

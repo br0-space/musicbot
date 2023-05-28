@@ -1,17 +1,18 @@
 package config
 
 import (
-	telegramclient "github.com/br0-space/bot-telegramclient"
-	"github.com/br0-space/musicbot/interfaces"
-	"github.com/spf13/pflag"
-	"github.com/spf13/viper"
 	"log"
 	"math/rand"
 	"strings"
 	"time"
+
+	telegramclient "github.com/br0-space/bot-telegramclient"
+	"github.com/br0-space/musicbot/interfaces"
+	"github.com/spf13/pflag"
+	"github.com/spf13/viper"
 )
 
-func init() {
+func Init() {
 	// Seed rand before doing anything else
 	rand.Seed(time.Now().UnixNano())
 

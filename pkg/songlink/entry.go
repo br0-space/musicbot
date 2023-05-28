@@ -2,8 +2,11 @@ package songlink
 
 import (
 	"fmt"
+
 	telegramclient "github.com/br0-space/bot-telegramclient"
 )
+
+const minLinksPerEntry = 3
 
 type Entry struct {
 	Type   EntryType
@@ -18,7 +21,7 @@ type EntryLink struct {
 }
 
 func (e Entry) ToMarkdown() string {
-	if len(e.Links) < 3 {
+	if len(e.Links) < minLinksPerEntry {
 		return ""
 	}
 
@@ -41,7 +44,7 @@ func (e Entry) ToMarkdown() string {
 		)
 	}
 
-	text = text + fmt.Sprintf(
+	text += fmt.Sprintf(
 		"🔗 [%s](%s)",
 		PlatformSonglink.Natural(),
 		e.Links[0].URL,

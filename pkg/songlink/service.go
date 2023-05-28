@@ -1,8 +1,9 @@
 package songlink
 
 import (
-	"github.com/br0-space/musicbot/interfaces"
 	"regexp"
+
+	"github.com/br0-space/musicbot/interfaces"
 )
 
 func Pattern() *regexp.Regexp {
