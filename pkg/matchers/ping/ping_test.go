@@ -2,7 +2,7 @@ package ping_test
 
 import (
 	telegramclient "github.com/br0-space/bot-telegramclient"
-	"github.com/br0-space/bot/pkg/matchers/ping"
+	"github.com/br0-space/musicbot/pkg/matchers/ping"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
