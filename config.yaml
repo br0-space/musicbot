@@ -1,0 +1,10 @@
+server:
+  listenAddr: ":3000"
+
+telegram:
+  apiKey: ""
+  webhookUrl: ""
+  baseUrl: "https://api.telegram.org/bot%s/"
+  endpointSetWebhook: "setWebhook"
+  endpointSendMessage: "sendMessage"
+  endpointSendPhoto: "sendPhoto"
