@@ -2,9 +2,10 @@ package ping
 
 import (
 	"fmt"
+	"regexp"
+
 	matcher "github.com/br0-space/bot-matcher"
 	telegramclient "github.com/br0-space/bot-telegramclient"
-	"regexp"
 )
 
 const identifier = "ping"
@@ -28,7 +29,7 @@ func MakeMatcher() Matcher {
 }
 
 func (m Matcher) Process(messageIn telegramclient.WebhookMessageStruct) ([]telegramclient.MessageStruct, error) {
-	if !m.DoesMatch(messageIn) {
+	if !m.Matcher.DoesMatch(messageIn) {
 		return nil, fmt.Errorf("message does not match")
 	}
 

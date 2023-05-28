@@ -2,6 +2,8 @@ package container
 
 import (
 	"flag"
+	"sync"
+
 	logger "github.com/br0-space/bot-logger"
 	matcher "github.com/br0-space/bot-matcher"
 	telegramclient "github.com/br0-space/bot-telegramclient"
@@ -10,13 +12,14 @@ import (
 	"github.com/br0-space/musicbot/pkg/matchers/musiclinks"
 	"github.com/br0-space/musicbot/pkg/matchers/ping"
 	"github.com/br0-space/musicbot/pkg/songlink"
-	"sync"
 )
 
-var configInstance *interfaces.ConfigStruct
-var configLock = &sync.Mutex{}
-var matcherRegistryInstance *matcher.Registry
-var matcherRegistryLock = &sync.Mutex{}
+var (
+	configInstance          *interfaces.ConfigStruct
+	configLock              = &sync.Mutex{}
+	matcherRegistryInstance *matcher.Registry
+	matcherRegistryLock     = &sync.Mutex{}
+)
 
 func runsAsTest() bool {
 	return flag.Lookup("test.v") != nil

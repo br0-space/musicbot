@@ -1,21 +1,30 @@
 package main
 
 import (
+	"net/http"
+	"time"
+
 	"github.com/br0-space/musicbot/container"
+	"github.com/br0-space/musicbot/pkg/config"
 	"github.com/gorilla/mux"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"github.com/spf13/pflag"
-	"net/http"
-	"time"
+)
+
+const (
+	readTimeout    = 15 * time.Second
+	writeTimeout   = 15 * time.Second
+	maxHeaderBytes = 4096
 )
 
 func main() {
+	config.Init()
 	pflag.Parse()
 
 	logger := container.ProvideLogger()
-	config := container.ProvideConfig()
+	cfg := container.ProvideConfig()
 
-	logger.Info("Starting HTTP server listening on", config.Server.ListenAddr)
+	logger.Info("Starting HTTP server listening on", cfg.Server.ListenAddr)
 
 	r := mux.NewRouter()
 	r.HandleFunc("/webhook", container.ProvideTelegramWebhookHandler().ServeHTTP)
@@ -24,12 +33,12 @@ func main() {
 	http.Handle("/", r)
 
 	srv := &http.Server{
-		Addr:           config.Server.ListenAddr,
+		Addr:           cfg.Server.ListenAddr,
 		Handler:        r,
-		ReadTimeout:    15 * time.Second,
-		WriteTimeout:   15 * time.Second,
+		ReadTimeout:    readTimeout,
+		WriteTimeout:   writeTimeout,
 		IdleTimeout:    0,
-		MaxHeaderBytes: 4096,
+		MaxHeaderBytes: maxHeaderBytes,
 	}
 
 	if err := srv.ListenAndServe(); err != nil {
