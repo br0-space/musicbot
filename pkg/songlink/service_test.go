@@ -133,7 +133,7 @@ var tests = []struct {
 			Links: []songlink.EntryLink{
 				{songlink.PlatformSonglink, "https://album.link/b/3803701310"},
 				{songlink.PlatformSpotify, "https://open.spotify.com/album/3RTTmyLttk4sOdylJRDKrE"},
-				{songlink.PlatformAppleMusic, "https://geo.music.apple.com/de/album/_/1140071785?mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m"},
+				{songlink.PlatformAppleMusic, "https://geo.music.apple.com/de/album/_/1686060156?mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m"},
 				{songlink.PlatformYoutube, "https://www.youtube.com/playlist?list=OLAK5uy_n3vkQMwLHzd3vClPzPEU9Oiy7COOwA89I"},
 				{songlink.PlatformBandcamp, "https://metrikmusic.bandcamp.com/album/life-thrills"},
 			},
