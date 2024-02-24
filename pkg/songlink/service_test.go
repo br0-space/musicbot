@@ -1,12 +1,12 @@
 package songlink_test
 
 import (
-	"github.com/smirzaei/parallel"
-	"github.com/stretchr/testify/assert"
-	"github.com/stretchr/testify/require"
 	"testing"
 
 	"github.com/br0-space/musicbot/pkg/songlink"
+	"github.com/smirzaei/parallel"
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 type songlinkTest struct {
