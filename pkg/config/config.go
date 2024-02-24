@@ -38,9 +38,9 @@ func NewTestConfig() *interfaces.ConfigStruct {
 			ListenAddr: "",
 		},
 		Telegram: telegramclient.ConfigStruct{
-			ApiKey:              "",
+			APIKey:              "",
 			WebhookURL:          "",
-			BaseUrl:             "",
+			BaseURL:             "",
 			EndpointSetWebhook:  "",
 			EndpointSendMessage: "",
 			EndpointSendPhoto:   "",
