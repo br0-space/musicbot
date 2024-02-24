@@ -46,6 +46,8 @@ github.com/br0-space/bot-logger v0.1.0 h1:1eBjueIp+LUeXCFZoPslE657yDr1NF6Dej/Xqa
 github.com/br0-space/bot-logger v0.1.0/go.mod h1:b0Bh0Qe0Ss15kKLh76GQKkPq7qyH/Uo7+MM2rQAvcgI=
 github.com/br0-space/bot-logger v0.1.1 h1:TzuQSLpSCwqfJf2alKNXJdhI3JNKTSdUyinVAVUgKlw=
 github.com/br0-space/bot-logger v0.1.1/go.mod h1:b0Bh0Qe0Ss15kKLh76GQKkPq7qyH/Uo7+MM2rQAvcgI=
+github.com/br0-space/bot-logger v0.1.2 h1:k38Do9A9oQFcP05W0CWbJyyZJDhvO9+fkSGi3HNLV1M=
+github.com/br0-space/bot-logger v0.1.2/go.mod h1:b0Bh0Qe0Ss15kKLh76GQKkPq7qyH/Uo7+MM2rQAvcgI=
 github.com/br0-space/bot-matcher v0.1.0 h1:c1RM3NOlgpgm4hLvqvuammies+lI9rY8lIsXVDU4Hy0=
 github.com/br0-space/bot-matcher v0.1.0/go.mod h1:AtK5O1xV57GzbYY/QyI+2MeDrz6Tc8kr1rzxlsTBfXk=
 github.com/br0-space/bot-matcher v0.1.1 h1:ZoBoXVipprEWA40pjtbuKK6t3CDFhBopqTN5oI2uFwY=
