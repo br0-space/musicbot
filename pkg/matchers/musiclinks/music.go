@@ -33,10 +33,11 @@ func (m Matcher) Process(messageIn telegramclient.WebhookMessageStruct) ([]teleg
 	res := make([]telegramclient.MessageStruct, 0)
 
 	for _, match := range matches {
-		songlinkEntry, err := m.songlinkService.EntryForUrl(match)
+		songlinkEntry, err := m.songlinkService.EntryForURL(match)
 		if err != nil {
 			return nil, err
 		}
+
 		if songlinkEntry.ToMarkdown() == "" {
 			continue
 		}
