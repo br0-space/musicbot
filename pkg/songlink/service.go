@@ -16,16 +16,16 @@ func MakeService() interfaces.SonglinkServiceInterface {
 	return Service{}
 }
 
-func (s Service) EntryForUrl(url string) (interfaces.SonglinkEntryInterface, error) {
+func (s Service) EntryForURL(url string) (interfaces.SonglinkEntryInterface, error) {
 	response, err := songlinkResponse(url)
 	if err != nil {
 		return nil, err
 	}
 
 	entry := Entry{
-		Type:   EntryType(response.Entities[response.EntityUniqueId].Type),
-		Title:  response.Entities[response.EntityUniqueId].Title,
-		Artist: response.Entities[response.EntityUniqueId].Artist,
+		Type:   EntryType(response.Entities[response.EntityUniqueID].Type),
+		Title:  response.Entities[response.EntityUniqueID].Title,
+		Artist: response.Entities[response.EntityUniqueID].Artist,
 		Links:  make([]EntryLink, 0),
 	}
 
@@ -34,24 +34,28 @@ func (s Service) EntryForUrl(url string) (interfaces.SonglinkEntryInterface, err
 		Platform: PlatformSonglink,
 		URL:      response.PageURL,
 	})
+
 	if response.Links.Spotify.URL != "" {
 		entry.Links = append(entry.Links, EntryLink{
 			Platform: PlatformSpotify,
 			URL:      response.Links.Spotify.URL,
 		})
 	}
+
 	if response.Links.AppleMusic.URL != "" {
 		entry.Links = append(entry.Links, EntryLink{
 			Platform: PlatformAppleMusic,
 			URL:      response.Links.AppleMusic.URL,
 		})
 	}
+
 	if response.Links.Youtube.URL != "" {
 		entry.Links = append(entry.Links, EntryLink{
 			Platform: PlatformYoutube,
 			URL:      response.Links.Youtube.URL,
 		})
 	}
+
 	if response.Links.Bandcamp.URL != "" {
 		entry.Links = append(entry.Links, EntryLink{
 			Platform: PlatformBandcamp,

@@ -5,5 +5,5 @@ type SonglinkEntryInterface interface {
 }
 
 type SonglinkServiceInterface interface {
-	EntryForUrl(url string) (SonglinkEntryInterface, error)
+	EntryForURL(url string) (SonglinkEntryInterface, error)
 }

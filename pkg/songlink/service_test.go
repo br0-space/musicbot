@@ -5,6 +5,7 @@ import (
 
 	"github.com/br0-space/musicbot/pkg/songlink"
 	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 var tests = []struct {
@@ -145,8 +146,8 @@ func TestGetSonglinkEntry(t *testing.T) {
 	t.Parallel()
 
 	for _, tt := range tests {
-		entry, err := songlink.MakeService().EntryForUrl(tt.in)
-		assert.Nil(t, err)
+		entry, err := songlink.MakeService().EntryForURL(tt.in)
+		require.NoError(t, err)
 		assert.NotNil(t, entry)
 		assert.Equal(t, tt.out, entry)
 	}

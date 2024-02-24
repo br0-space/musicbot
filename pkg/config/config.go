@@ -32,10 +32,20 @@ func NewConfig() *interfaces.ConfigStruct {
 
 func NewTestConfig() *interfaces.ConfigStruct {
 	return &interfaces.ConfigStruct{
-		Verbose:  false,
-		Quiet:    false,
-		Server:   interfaces.ServerConfigStruct{},
-		Telegram: telegramclient.ConfigStruct{},
+		Verbose: false,
+		Quiet:   false,
+		Server: interfaces.ServerConfigStruct{
+			ListenAddr: "",
+		},
+		Telegram: telegramclient.ConfigStruct{
+			ApiKey:              "",
+			WebhookURL:          "",
+			BaseUrl:             "",
+			EndpointSetWebhook:  "",
+			EndpointSendMessage: "",
+			EndpointSendPhoto:   "",
+			ChatID:              0,
+		},
 	}
 }
 
@@ -52,12 +62,14 @@ func loadConfig() (*interfaces.ConfigStruct, error) {
 
 	// Load config file
 	v.SetConfigFile("config.yaml")
+
 	if err := v.ReadInConfig(); err != nil {
 		log.Panicln(err)
 	}
 
 	// Load .env file
 	v.SetConfigFile(".env")
+
 	if err := v.MergeInConfig(); err != nil {
 		log.Println("no .env file found")
 	}

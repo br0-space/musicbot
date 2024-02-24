@@ -32,7 +32,7 @@ func main() {
 	r.NotFoundHandler = http.HandlerFunc(notFound)
 	http.Handle("/", r)
 
-	srv := &http.Server{
+	srv := &http.Server{ //nolint:exhaustruct
 		Addr:           cfg.Server.ListenAddr,
 		Handler:        r,
 		ReadTimeout:    readTimeout,
@@ -46,7 +46,7 @@ func main() {
 	}
 }
 
-func notFound(res http.ResponseWriter, req *http.Request) {
+func notFound(_ http.ResponseWriter, req *http.Request) {
 	logger := container.ProvideLogger()
 
 	logger.Debugf("%s %s %s from %s", req.Method, req.URL, req.Proto, req.RemoteAddr)
