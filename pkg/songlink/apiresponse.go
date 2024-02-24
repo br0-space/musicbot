@@ -7,7 +7,7 @@ import (
 )
 
 type apiResponse struct {
-	EntityUniqueId string                       `json:"entityUniqueId"`
+	EntityUniqueID string                       `json:"entityUniqueId"`
 	PageURL        string                       `json:"pageUrl"`
 	Entities       map[string]apiResponseEntity `json:"entitiesByUniqueId"`
 	Links          apiResponseLinks             `json:"linksByPlatform"`
@@ -19,7 +19,7 @@ type apiResponseEntity struct {
 	Artist string `json:"artistName"`
 }
 
-type apiResponseLinks struct { //nolint:musttag
+type apiResponseLinks struct {
 	Spotify    apiResponseLink
 	AppleMusic apiResponseLink
 	Youtube    apiResponseLink
@@ -29,7 +29,39 @@ type apiResponseLinks struct { //nolint:musttag
 
 type apiResponseLink struct {
 	URL            string `json:"url"`
-	EntityUniqueId string `json:"entityUniqueId"`
+	EntityUniqueID string `json:"entityUniqueId"`
+}
+
+func newAPIResponse() *apiResponse {
+	apiResponse := makeAPIResponse()
+
+	return &apiResponse
+}
+
+func makeAPIResponse() apiResponse {
+	return apiResponse{
+		EntityUniqueID: "",
+		PageURL:        "",
+		Entities:       map[string]apiResponseEntity{},
+		Links:          makeAPIResponseLinks(),
+	}
+}
+
+func makeAPIResponseLinks() apiResponseLinks {
+	return apiResponseLinks{
+		Spotify:    makeAPIResponseLink(),
+		AppleMusic: makeAPIResponseLink(),
+		Youtube:    makeAPIResponseLink(),
+		SoundCloud: makeAPIResponseLink(),
+		Bandcamp:   makeAPIResponseLink(),
+	}
+}
+
+func makeAPIResponseLink() apiResponseLink {
+	return apiResponseLink{
+		URL:            "",
+		EntityUniqueID: "",
+	}
 }
 
 // Example URLs:
@@ -46,10 +78,10 @@ func songlinkResponse(queryURL string) (*apiResponse, error) {
 	)
 
 	request, _ := http.NewRequest(http.MethodGet, url, nil)
-	response, _ := http.DefaultClient.Do(request)
+	response, _ := http.DefaultClient.Do(request) //nolint:bodyclose
 
-	responseBody := &apiResponse{}
-	if err := json.NewDecoder(response.Body).Decode(responseBody); err != nil {
+	responseBody := newAPIResponse()
+	if err := json.NewDecoder(response.Body).Decode(responseBody); err != nil { //nolint:musttag
 		return nil, err
 	}
 

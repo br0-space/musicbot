@@ -74,11 +74,11 @@ func ProvideTelegramWebhookHandler() telegramclient.WebhookHandlerInterface {
 func ProvideTelegramClient() telegramclient.ClientInterface {
 	if runsAsTest() {
 		return telegramclient.NewMockClient()
-	} else {
-		return telegramclient.NewClient(
-			ProvideConfig().Telegram,
-		)
 	}
+
+	return telegramclient.NewClient(
+		ProvideConfig().Telegram,
+	)
 }
 
 func ProvideSonglinkService() interfaces.SonglinkServiceInterface {
