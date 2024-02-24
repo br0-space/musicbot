@@ -7,8 +7,9 @@ require (
 	github.com/br0-space/bot-matcher v0.1.2
 	github.com/br0-space/bot-telegramclient v0.1.1
 	github.com/davecgh/go-spew v1.1.1
-	github.com/gorilla/mux v1.8.0
+	github.com/gorilla/mux v1.8.1
 	github.com/prometheus/client_golang v1.16.0
+	github.com/smirzaei/parallel v1.1.0
 	github.com/spf13/pflag v1.0.5
 	github.com/spf13/viper v1.16.0
 	github.com/stretchr/testify v1.8.4
@@ -29,7 +30,6 @@ require (
 	github.com/prometheus/client_model v0.3.0 // indirect
 	github.com/prometheus/common v0.42.0 // indirect
 	github.com/prometheus/procfs v0.10.1 // indirect
-	github.com/smirzaei/parallel v1.1.0 // indirect
 	github.com/spf13/afero v1.9.5 // indirect
 	github.com/spf13/cast v1.5.1 // indirect
 	github.com/spf13/jwalterweatherman v1.1.0 // indirect
