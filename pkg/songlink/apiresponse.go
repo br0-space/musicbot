@@ -25,6 +25,7 @@ type apiResponseLinks struct {
 	Youtube    apiResponseLink
 	SoundCloud apiResponseLink
 	Bandcamp   apiResponseLink
+	Tidal      apiResponseLink
 }
 
 type apiResponseLink struct {
@@ -54,6 +55,7 @@ func makeAPIResponseLinks() apiResponseLinks {
 		Youtube:    makeAPIResponseLink(),
 		SoundCloud: makeAPIResponseLink(),
 		Bandcamp:   makeAPIResponseLink(),
+		Tidal:      makeAPIResponseLink(),
 	}
 }
 

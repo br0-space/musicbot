@@ -8,6 +8,7 @@ const (
 	PlatformAppleMusic Platform = "appleMusic"
 	PlatformYoutube    Platform = "youtube"
 	PlatformBandcamp   Platform = "bandcamp"
+	PlatformTidal      Platform = "tidal"
 )
 
 func (p Platform) Natural() string {
@@ -22,6 +23,8 @@ func (p Platform) Natural() string {
 		return "YouTube"
 	case PlatformBandcamp:
 		return "Bandcamp"
+	case PlatformTidal:
+		return "Tidal"
 	default:
 		return "Unknown"
 	}
