@@ -7,7 +7,7 @@ import (
 )
 
 func Pattern() *regexp.Regexp {
-	return regexp.MustCompile(`(https?://open.spotify.com/(album|track)/.+?|https?://music.apple.com/[a-z]{2}/album/.+?|https?://(www.)?youtube.com/(watch\?v=|playlist\?list=).+?|https?://youtu.be/.+?|https?://.+?.bandcamp.com/(album|track)/.+?)(\s|$)`)
+	return regexp.MustCompile(`(https?://open\.spotify\.com/(album|track)/.+?|https?://music\.apple\.com/[a-z]{2}/album/.+?|https?://(www\.)?youtube\.com/(watch\?v=|playlist\?list=).+?|https?://youtu\.be/.+?|https?://.+?\.bandcamp\.com/(album|track)/.+?|https?://(listen\.)?tidal\.com/(browse/)?(album|track)/.+?)(\s|$)`)
 }
 
 type Service struct{}
@@ -60,6 +60,13 @@ func (s Service) EntryForURL(url string) (interfaces.SonglinkEntryInterface, err
 		entry.Links = append(entry.Links, EntryLink{
 			Platform: PlatformBandcamp,
 			URL:      response.Links.Bandcamp.URL,
+		})
+	}
+
+	if response.Links.Tidal.URL != "" {
+		entry.Links = append(entry.Links, EntryLink{
+			Platform: PlatformTidal,
+			URL:      response.Links.Tidal.URL,
 		})
 	}
 
