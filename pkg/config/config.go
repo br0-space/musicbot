@@ -2,9 +2,7 @@ package config
 
 import (
 	"log"
-	"math/rand"
 	"strings"
-	"time"
 
 	telegramclient "github.com/br0-space/bot-telegramclient"
 	"github.com/br0-space/musicbot/interfaces"
@@ -13,9 +11,6 @@ import (
 )
 
 func Init() {
-	// Seed rand before doing anything else
-	rand.Seed(time.Now().UnixNano())
-
 	// Add default command line flags
 	pflag.BoolP("verbose", "v", false, "Show verbose output")
 	pflag.BoolP("quiet", "q", false, "Show errors only (overwrites verbose mode)")
