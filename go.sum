@@ -6,6 +6,8 @@ github.com/br0-space/bot-logger v0.1.3 h1:pkf7bQwsI3hbIuJZfxRVG/l9/n/7gWRCvu0wxv
 github.com/br0-space/bot-logger v0.1.3/go.mod h1:FOUFZRX9zghjeo73+TDAcb/nS4b8l6SWlSpdh7ZRPBM=
 github.com/br0-space/bot-matcher v0.1.3 h1:AdfEp9QxPgfpIxvNttrgrmvUlt4azMB8HNVY2OEahl0=
 github.com/br0-space/bot-matcher v0.1.3/go.mod h1:9pSwhDTaAdjaagxGXlKQqEkBGJHePawQTUr2A5vJ6Ps=
+github.com/br0-space/bot-matcher v0.1.4 h1:3FernYrEllX8jzCzv4lZDhYVx4RcKp4l7m7Es9qYYHI=
+github.com/br0-space/bot-matcher v0.1.4/go.mod h1:E6Q1qACGIyMwKoFFfAf/lfnyVvZpzv5bsjzDaVcaLNE=
 github.com/br0-space/bot-telegramclient v0.1.2 h1:szKGH91MwuFFFX/Ji2S3yxsCx/p2pEabpVA4FTRnbak=
 github.com/br0-space/bot-telegramclient v0.1.2/go.mod h1:FNjacw1Mvf0O+vwWDZ9dOekIcS8yfR52Reifq54Q1jM=
 github.com/cespare/xxhash/v2 v2.2.0 h1:DC2CZ1Ep5Y4k3ZQ899DldepgrayRUGE6BBZ/cd9Cj44=
