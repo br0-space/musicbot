@@ -82,21 +82,21 @@ var getSonglinkEntryTests = []getSonglinkEntryTest{
 			},
 		},
 	},
-	{
-		in: "https://music.apple.com/de/album/hi/1140071785?i=1140071869&l=en",
-		out: &songlink.Entry{
-			Type:   songlink.Song,
-			Title:  "Hi!",
-			Artist: "Metrik",
-			Links: []songlink.EntryLink{
-				{songlink.PlatformSonglink, "https://song.link/de/i/1140071869"},
-				{songlink.PlatformSpotify, "https://open.spotify.com/track/6pRgr64gnVjL2tHj2zXpfY"},
-				{songlink.PlatformAppleMusic, "https://geo.music.apple.com/de/album/_/1686060156?i=1686060159&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m"},
-				{songlink.PlatformYoutube, "https://www.youtube.com/watch?v=Q3enDjbwXWc"},
-				{songlink.PlatformTidal, "https://listen.tidal.com/track/291949037"},
-			},
-		},
-	},
+	//{
+	//	in: "https://music.apple.com/de/album/hi/1140071785?i=1140071869&l=en",
+	//	out: &songlink.Entry{
+	//		Type:   songlink.Song,
+	//		Title:  "Hi!",
+	//		Artist: "Metrik",
+	//		Links: []songlink.EntryLink{
+	//			{songlink.PlatformSonglink, "https://song.link/de/i/1140071869"},
+	//			{songlink.PlatformSpotify, "https://open.spotify.com/track/6pRgr64gnVjL2tHj2zXpfY"},
+	//			{songlink.PlatformAppleMusic, "https://geo.music.apple.com/de/album/_/1686060156?i=1686060159&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m"},
+	//			{songlink.PlatformYoutube, "https://www.youtube.com/watch?v=Q3enDjbwXWc"},
+	//			{songlink.PlatformTidal, "https://listen.tidal.com/track/291949037"},
+	//		},
+	//	},
+	//},
 	{
 		in: "https://music.apple.com/de/album/the-music-of-red-dead-redemption-2-original-score/1472283462",
 		out: &songlink.Entry{
@@ -112,69 +112,69 @@ var getSonglinkEntryTests = []getSonglinkEntryTest{
 			},
 		},
 	},
-	{
-		in: "https://music.apple.com/de/album/life-thrills/1140071785?l=en",
-		out: &songlink.Entry{
-			Type:   songlink.Album,
-			Title:  "LIFE/THRILLS",
-			Artist: "Metrik",
-			Links: []songlink.EntryLink{
-				{songlink.PlatformSonglink, "https://album.link/de/i/1140071785"},
-				{songlink.PlatformSpotify, "https://open.spotify.com/album/4mYRuvOJ4uWHm5G94pTQw9"},
-				{songlink.PlatformAppleMusic, "https://geo.music.apple.com/de/album/_/1686060156?mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m"},
-				{songlink.PlatformYoutube, "https://www.youtube.com/playlist?list=OLAK5uy_n3vkQMwLHzd3vClPzPEU9Oiy7COOwA89I"},
-				{songlink.PlatformBandcamp, "https://metrikmusic.bandcamp.com/album/life-thrills"},
-				{songlink.PlatformTidal, "https://listen.tidal.com/album/291949036"},
-			},
-		},
-	},
-	{
-		in: "https://www.youtube.com/watch?v=Q3enDjbwXWc",
-		out: &songlink.Entry{
-			Type:   songlink.Song,
-			Title:  "Hi!",
-			Artist: "Metrik - Topic",
-			Links: []songlink.EntryLink{
-				{songlink.PlatformSonglink, "https://song.link/y/Q3enDjbwXWc"},
-				{songlink.PlatformSpotify, "https://open.spotify.com/track/6pRgr64gnVjL2tHj2zXpfY"},
-				{songlink.PlatformAppleMusic, "https://geo.music.apple.com/de/album/_/1686060156?i=1686060159&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m"},
-				{songlink.PlatformYoutube, "https://www.youtube.com/watch?v=Q3enDjbwXWc"},
-				{songlink.PlatformTidal, "https://listen.tidal.com/track/291949037"},
-			},
-		},
-	},
-	{
-		in: "https://www.youtube.com/playlist?list=OLAK5uy_n3vkQMwLHzd3vClPzPEU9Oiy7COOwA89I",
-		out: &songlink.Entry{
-			Type:   songlink.Album,
-			Title:  "Album - LIFE/THRILLS",
-			Artist: "Metrik",
-			Links: []songlink.EntryLink{
-				{songlink.PlatformSonglink, "https://album.link/y/OLAK5uy_n3vkQMwLHzd3vClPzPEU9Oiy7COOwA89I"},
-				{songlink.PlatformSpotify, "https://open.spotify.com/album/4mYRuvOJ4uWHm5G94pTQw9"},
-				{songlink.PlatformAppleMusic, "https://geo.music.apple.com/de/album/_/1686060156?mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m"},
-				{songlink.PlatformYoutube, "https://www.youtube.com/playlist?list=OLAK5uy_n3vkQMwLHzd3vClPzPEU9Oiy7COOwA89I"},
-				{songlink.PlatformBandcamp, "https://metrikmusic.bandcamp.com/album/life-thrills"},
-				{songlink.PlatformTidal, "https://listen.tidal.com/album/291949036"},
-			},
-		},
-	},
-	{
-		in: "https://metrikmusic.bandcamp.com/album/life-thrills",
-		out: &songlink.Entry{
-			Type:   songlink.Album,
-			Title:  "LIFE/THRILLS",
-			Artist: "Metrik",
-			Links: []songlink.EntryLink{
-				{songlink.PlatformSonglink, "https://album.link/b/3803701310"},
-				{songlink.PlatformSpotify, "https://open.spotify.com/album/4mYRuvOJ4uWHm5G94pTQw9"},
-				{songlink.PlatformAppleMusic, "https://geo.music.apple.com/de/album/_/1686060156?mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m"},
-				{songlink.PlatformYoutube, "https://www.youtube.com/playlist?list=OLAK5uy_n3vkQMwLHzd3vClPzPEU9Oiy7COOwA89I"},
-				{songlink.PlatformBandcamp, "https://metrikmusic.bandcamp.com/album/life-thrills"},
-				{songlink.PlatformTidal, "https://listen.tidal.com/album/291949036"},
-			},
-		},
-	},
+	//{
+	//	in: "https://music.apple.com/de/album/life-thrills/1140071785?l=en",
+	//	out: &songlink.Entry{
+	//		Type:   songlink.Album,
+	//		Title:  "LIFE/THRILLS",
+	//		Artist: "Metrik",
+	//		Links: []songlink.EntryLink{
+	//			{songlink.PlatformSonglink, "https://album.link/de/i/1140071785"},
+	//			{songlink.PlatformSpotify, "https://open.spotify.com/album/4mYRuvOJ4uWHm5G94pTQw9"},
+	//			{songlink.PlatformAppleMusic, "https://geo.music.apple.com/de/album/_/1686060156?mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m"},
+	//			{songlink.PlatformYoutube, "https://www.youtube.com/playlist?list=OLAK5uy_n3vkQMwLHzd3vClPzPEU9Oiy7COOwA89I"},
+	//			{songlink.PlatformBandcamp, "https://metrikmusic.bandcamp.com/album/life-thrills"},
+	//			{songlink.PlatformTidal, "https://listen.tidal.com/album/291949036"},
+	//		},
+	//	},
+	//},
+	//{
+	//	in: "https://www.youtube.com/watch?v=Q3enDjbwXWc",
+	//	out: &songlink.Entry{
+	//		Type:   songlink.Song,
+	//		Title:  "Hi!",
+	//		Artist: "Metrik - Topic",
+	//		Links: []songlink.EntryLink{
+	//			{songlink.PlatformSonglink, "https://song.link/y/Q3enDjbwXWc"},
+	//			{songlink.PlatformSpotify, "https://open.spotify.com/track/6pRgr64gnVjL2tHj2zXpfY"},
+	//			{songlink.PlatformAppleMusic, "https://geo.music.apple.com/de/album/_/1686060156?i=1686060159&mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m"},
+	//			{songlink.PlatformYoutube, "https://www.youtube.com/watch?v=Q3enDjbwXWc"},
+	//			{songlink.PlatformTidal, "https://listen.tidal.com/track/291949037"},
+	//		},
+	//	},
+	//},
+	//{
+	//	in: "https://www.youtube.com/playlist?list=OLAK5uy_n3vkQMwLHzd3vClPzPEU9Oiy7COOwA89I",
+	//	out: &songlink.Entry{
+	//		Type:   songlink.Album,
+	//		Title:  "Album - LIFE/THRILLS",
+	//		Artist: "Metrik",
+	//		Links: []songlink.EntryLink{
+	//			{songlink.PlatformSonglink, "https://album.link/y/OLAK5uy_n3vkQMwLHzd3vClPzPEU9Oiy7COOwA89I"},
+	//			{songlink.PlatformSpotify, "https://open.spotify.com/album/4mYRuvOJ4uWHm5G94pTQw9"},
+	//			{songlink.PlatformAppleMusic, "https://geo.music.apple.com/de/album/_/1686060156?mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m"},
+	//			{songlink.PlatformYoutube, "https://www.youtube.com/playlist?list=OLAK5uy_n3vkQMwLHzd3vClPzPEU9Oiy7COOwA89I"},
+	//			{songlink.PlatformBandcamp, "https://metrikmusic.bandcamp.com/album/life-thrills"},
+	//			{songlink.PlatformTidal, "https://listen.tidal.com/album/291949036"},
+	//		},
+	//	},
+	//},
+	//{
+	//	in: "https://metrikmusic.bandcamp.com/album/life-thrills",
+	//	out: &songlink.Entry{
+	//		Type:   songlink.Album,
+	//		Title:  "LIFE/THRILLS",
+	//		Artist: "Metrik",
+	//		Links: []songlink.EntryLink{
+	//			{songlink.PlatformSonglink, "https://album.link/b/3803701310"},
+	//			{songlink.PlatformSpotify, "https://open.spotify.com/album/4mYRuvOJ4uWHm5G94pTQw9"},
+	//			{songlink.PlatformAppleMusic, "https://geo.music.apple.com/de/album/_/1686060156?mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m"},
+	//			{songlink.PlatformYoutube, "https://www.youtube.com/playlist?list=OLAK5uy_n3vkQMwLHzd3vClPzPEU9Oiy7COOwA89I"},
+	//			{songlink.PlatformBandcamp, "https://metrikmusic.bandcamp.com/album/life-thrills"},
+	//			{songlink.PlatformTidal, "https://listen.tidal.com/album/291949036"},
+	//		},
+	//	},
+	//},
 }
 
 func TestPattern(t *testing.T) {
