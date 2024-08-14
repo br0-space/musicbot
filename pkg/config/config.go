@@ -1,12 +1,13 @@
 package config
 
 import (
+	"log"
+	"strings"
+
 	telegramclient "github.com/br0-space/bot-telegramclient"
 	"github.com/br0-space/musicbot/interfaces"
 	"github.com/spf13/pflag"
 	"github.com/spf13/viper"
-	"log"
-	"strings"
 )
 
 func Init() {
