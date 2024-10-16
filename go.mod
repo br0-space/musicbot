@@ -10,7 +10,7 @@ require (
 	github.com/br0-space/bot-telegramclient v0.1.3
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc
 	github.com/gorilla/mux v1.8.1
-	github.com/prometheus/client_golang v1.20.0
+	github.com/prometheus/client_golang v1.20.5
 	github.com/smirzaei/parallel v1.1.0
 	github.com/spf13/pflag v1.0.5
 	github.com/spf13/viper v1.19.0
