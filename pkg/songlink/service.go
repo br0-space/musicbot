@@ -7,7 +7,7 @@ import (
 )
 
 func Pattern() *regexp.Regexp {
-	return regexp.MustCompile(`(https?://open\.spotify\.com/(album|track)/.+?|https?://music\.apple\.com/[a-z]{2}/album/.+?|https?://(www\.)?youtube\.com/(watch\?v=|playlist\?list=).+?|https?://youtu\.be/.+?|https?://.+?\.bandcamp\.com/(album|track)/.+?|https?://(listen\.)?tidal\.com/(browse/)?(album|track)/.+?)(\s|$)`)
+	return regexp.MustCompile(`(https?://open\.spotify\.com/(.+?/)?(album|track)/.+?|https?://music\.apple\.com/[a-z]{2}/album/.+?|https?://(www\.)?youtube\.com/(watch\?v=|playlist\?list=).+?|https?://youtu\.be/.+?|https?://.+?\.bandcamp\.com/(album|track)/.+?|https?://(listen\.)?tidal\.com/(browse/)?(album|track)/.+?)(\s|$)`)
 }
 
 type Service struct{}
