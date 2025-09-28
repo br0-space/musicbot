@@ -2,7 +2,7 @@ module github.com/br0-space/musicbot
 
 go 1.23.0
 
-toolchain go1.24.0
+toolchain go1.25.1
 
 require (
 	github.com/br0-space/bot-logger v0.1.3
