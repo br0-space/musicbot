@@ -15,6 +15,7 @@ var help []matcher.HelpStruct
 
 type Matcher struct {
 	matcher.Matcher
+
 	songlinkService interfaces.SonglinkServiceInterface
 }
 
@@ -28,7 +29,7 @@ func MakeMatcher(
 }
 
 func (m Matcher) Process(messageIn telegramclient.WebhookMessageStruct) ([]telegramclient.MessageStruct, error) {
-	matches := m.Matcher.InlineMatches(messageIn)
+	matches := m.InlineMatches(messageIn)
 
 	res := make([]telegramclient.MessageStruct, 0)
 
