@@ -32,7 +32,7 @@ func MakeMatcher() Matcher {
 }
 
 func (m Matcher) Process(messageIn telegramclient.WebhookMessageStruct) ([]telegramclient.MessageStruct, error) {
-	if !m.Matcher.DoesMatch(messageIn) {
+	if !m.DoesMatch(messageIn) {
 		return nil, errors.New("message does not match")
 	}
 
