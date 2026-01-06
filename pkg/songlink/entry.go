@@ -34,6 +34,7 @@ func (e Entry) ToMarkdown() string {
 	)
 
 	var textSb35 strings.Builder
+
 	for i := range e.Links {
 		if e.Links[i].Platform == PlatformSonglink {
 			continue
@@ -45,6 +46,7 @@ func (e Entry) ToMarkdown() string {
 			e.Links[i].URL,
 		))
 	}
+
 	text += textSb35.String()
 
 	text += fmt.Sprintf(
