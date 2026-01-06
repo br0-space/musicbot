@@ -3,3 +3,9 @@
 
 # Compiled binary
 main
+
+# Project files
+.idea/copilot.data.migration.*.xml
+.idea/workspace.xml
+.idea/queries/
+.idea/data_source_mapping.xml
