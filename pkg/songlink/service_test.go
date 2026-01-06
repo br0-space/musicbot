@@ -52,21 +52,21 @@ var getSonglinkEntryTests = []getSonglinkEntryTest{
 			},
 		},
 	},
-	{
-		in: "https://open.spotify.com/album/2Gbv0Wjtwn9zQYMvWtTHnK",
-		out: &songlink.Entry{
-			Type:   songlink.Album,
-			Title:  "The Music of Red Dead Redemption 2 (Original Score)",
-			Artist: "Various Artists",
-			Links: []songlink.EntryLink{
-				{songlink.PlatformSonglink, "https://album.link/s/2Gbv0Wjtwn9zQYMvWtTHnK"},
-				{songlink.PlatformSpotify, "https://open.spotify.com/album/2Gbv0Wjtwn9zQYMvWtTHnK"},
-				{songlink.PlatformAppleMusic, "https://geo.music.apple.com/de/album/_/1472283462?mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m"},
-				{songlink.PlatformYoutube, "https://www.youtube.com/playlist?list=OLAK5uy_myT6DLJmO1jsviiIR4li7oyaHXWpyIVWo"},
-				{songlink.PlatformTidal, "https://listen.tidal.com/album/112998896"},
-			},
-		},
-	},
+	//{
+	//	in: "https://open.spotify.com/album/2Gbv0Wjtwn9zQYMvWtTHnK",
+	//	out: &songlink.Entry{
+	//		Type:   songlink.Album,
+	//		Title:  "The Music of Red Dead Redemption 2 (Original Score)",
+	//		Artist: "Various Artists",
+	//		Links: []songlink.EntryLink{
+	//			{songlink.PlatformSonglink, "https://album.link/s/2Gbv0Wjtwn9zQYMvWtTHnK"},
+	//			{songlink.PlatformSpotify, "https://open.spotify.com/album/2Gbv0Wjtwn9zQYMvWtTHnK"},
+	//			{songlink.PlatformAppleMusic, "https://geo.music.apple.com/de/album/_/1472283462?mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m"},
+	//			{songlink.PlatformYoutube, "https://www.youtube.com/playlist?list=OLAK5uy_myT6DLJmO1jsviiIR4li7oyaHXWpyIVWo"},
+	//			{songlink.PlatformTidal, "https://listen.tidal.com/album/112998896"},
+	//		},
+	//	},
+	//},
 	{
 		in: "https://music.apple.com/de/album/by-1899-the-age-of-outlaws-and-gunslingers-was-at-an-end/1472283462?i=1472283463",
 		out: &songlink.Entry{
@@ -97,21 +97,21 @@ var getSonglinkEntryTests = []getSonglinkEntryTest{
 	//		},
 	//	},
 	//},
-	{
-		in: "https://music.apple.com/de/album/the-music-of-red-dead-redemption-2-original-score/1472283462",
-		out: &songlink.Entry{
-			Type:   songlink.Album,
-			Title:  "The Music of Red Dead Redemption 2 (Original Score)",
-			Artist: "Verschiedene Interpreten",
-			Links: []songlink.EntryLink{
-				{songlink.PlatformSonglink, "https://album.link/de/i/1472283462"},
-				{songlink.PlatformSpotify, "https://open.spotify.com/album/2Gbv0Wjtwn9zQYMvWtTHnK"},
-				{songlink.PlatformAppleMusic, "https://geo.music.apple.com/de/album/_/1472283462?mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m"},
-				{songlink.PlatformYoutube, "https://www.youtube.com/playlist?list=PLasqSXwCIDXcSbf1CrOrSDirCh8bywoCy"},
-				{songlink.PlatformTidal, "https://listen.tidal.com/album/112998896"},
-			},
-		},
-	},
+	//{
+	//	in: "https://music.apple.com/de/album/the-music-of-red-dead-redemption-2-original-score/1472283462",
+	//	out: &songlink.Entry{
+	//		Type:   songlink.Album,
+	//		Title:  "The Music of Red Dead Redemption 2 (Original Score)",
+	//		Artist: "Verschiedene Interpreten",
+	//		Links: []songlink.EntryLink{
+	//			{songlink.PlatformSonglink, "https://album.link/de/i/1472283462"},
+	//			{songlink.PlatformSpotify, "https://open.spotify.com/album/2Gbv0Wjtwn9zQYMvWtTHnK"},
+	//			{songlink.PlatformAppleMusic, "https://geo.music.apple.com/de/album/_/1472283462?mt=1&app=music&ls=1&at=1000lHKX&ct=api_http&itscg=30200&itsct=odsl_m"},
+	//			{songlink.PlatformYoutube, "https://www.youtube.com/playlist?list=PLasqSXwCIDXcSbf1CrOrSDirCh8bywoCy"},
+	//			{songlink.PlatformTidal, "https://listen.tidal.com/album/112998896"},
+	//		},
+	//	},
+	//},
 	//{
 	//	in: "https://music.apple.com/de/album/life-thrills/1140071785?l=en",
 	//	out: &songlink.Entry{

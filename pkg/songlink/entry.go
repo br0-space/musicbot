@@ -2,6 +2,7 @@ package songlink
 
 import (
 	"fmt"
+	"strings"
 
 	telegramclient "github.com/br0-space/bot-telegramclient"
 )
@@ -32,17 +33,21 @@ func (e Entry) ToMarkdown() string {
 		e.Type.Natural(),
 	)
 
+	var textSb35 strings.Builder
+
 	for i := range e.Links {
 		if e.Links[i].Platform == PlatformSonglink {
 			continue
 		}
 
-		text += fmt.Sprintf(
+		textSb35.WriteString(fmt.Sprintf(
 			"🎧 [%s](%s)\n\n",
 			e.Links[i].Platform.Natural(),
 			e.Links[i].URL,
-		)
+		))
 	}
+
+	text += textSb35.String()
 
 	text += fmt.Sprintf(
 		"🔗 [%s](%s)",
